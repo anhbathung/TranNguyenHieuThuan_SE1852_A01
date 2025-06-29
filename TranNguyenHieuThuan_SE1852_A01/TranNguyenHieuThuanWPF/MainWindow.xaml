@@ -1,0 +1,48 @@
+<Window x:Class="TranNguyenHieuThuanWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="thuanne - Sales Management System" Height="642" Width="1526"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#2196F3" Padding="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="thuanne - Sales Management System" 
+                           FontSize="20" FontWeight="Bold" 
+                           Foreground="White" VerticalAlignment="Center"/>
+
+                <Button Grid.Column="1" Content="Đăng xuất" Click="LogoutButton_Click"
+                        Background="#FF5722" Foreground="White" Padding="15,5"/>
+            </Grid>
+        </Border>
+
+        <!-- Main Content -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Navigation Menu -->
+            <StackPanel Grid.Column="0" Background="#EEE" VerticalAlignment="Stretch">
+                <Button Content="Quản lý Khách hàng" Name="btnCustomer" Click="btnCustomer_Click" Margin="10"/>
+                <Button Content="Quản lý Sản phẩm" Name="btnProduct" Click="btnProduct_Click" Margin="10"/>
+                <Button Content="🛒 Quản lý Đơn hàng" Click="OrderButton_Click" Margin="10"/>
+                <Button Content="📊 Báo cáo Thống kê" Click="ReportButton_Click" Margin="10"/>
+            </StackPanel>
+
+            <!-- Content Area -->
+            <ContentControl x:Name="MainContent" Grid.Column="1"/>
+        </Grid>
+    </Grid>
+</Window> 
